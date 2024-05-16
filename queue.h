@@ -1,11 +1,8 @@
+#ifndef MYQUEUE_QUEUE_H
+#define MYQUEUE_QUEUE_H
 
-#ifndef MYSTACK_STACK_H
-#define MYSTACK_STACK_H
+int isQueueEmpty(void);
+int isQueueFull(void);
 
-int isStackEmpty(void);
-int isStackFull(void);
-int Pop(void);
-int Top(void);
-void Push(int val);
 
-#endif //MYSTACK_STACK_H
+#endif MYQUEUE_QUEUE_H
