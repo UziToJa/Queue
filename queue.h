@@ -4,5 +4,6 @@
 int isQueueEmpty(void);
 int isQueueFull(void);
 void Add(int val);
+int Peek(void);
 
 #endif MYQUEUE_QUEUE_H

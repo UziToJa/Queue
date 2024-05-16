@@ -3,6 +3,7 @@
 int count = 0;
 int queue_table[QUEUE_SIZE] = { 0 };
 int queue_tail = 0;
+int queue_head = 0;
 
 int isQueueEmpty(void)
 {
@@ -29,5 +30,15 @@ void Add(int val)
             queue_tail = 0;
         }
     }
+}
+
+int Peek(void)
+{
+    if (!isQueueEmpty())
+    {
+        return queue_table[queue_head];
+    }
+
+    return queue_table[0];
 }
 

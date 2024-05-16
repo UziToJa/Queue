@@ -37,6 +37,13 @@ int main()
                 }
                 break;
             case 2:
+                if (!isQueueEmpty()) {
+                    temp = Peek();
+                    printf("Odczytana wartosc: %d", temp);
+                }
+                else {
+                    printf("operacja niedozwolona KOLEJKA pusty!!!\n\n");
+                }
                 break;
             case 3:
                 break;
