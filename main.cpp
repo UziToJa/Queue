@@ -1,85 +1,83 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 #include "queue.h"
 
 void menu(void)
 {
-    printf("\n");
-    printf("1 - dodaj liczbe na kolejce (Add)\n");
-    printf("2 - odczytaj wartosc z poczatku kolejki (Peek)\n");
-    printf("3 - wez liczbe ze kolejki (Pop)\n");
-    printf("4 - sprawdz czy kolejka jest pusta\n");
-    printf("5 - sprawdz czy kolejka jest pelna\n");
-    printf("6 - koniec programu\n");
-    printf("\n");
+    cout << endl;
+    cout <<"1 - dodaj liczbe na kolejce (Add)" << endl;
+    cout <<"2 - odczytaj wartosc z poczatku kolejki (Peek)"<< endl;
+    cout <<"3 - wez liczbe ze kolejki (Pop)"<< endl;
+    cout <<"4 - sprawdz czy kolejka jest pusta"<< endl;
+    cout <<"5 - sprawdz czy kolejka jest pelna"<< endl;
+    cout <<"6 - koniec programu"<< endl;
+    cout << endl;
 }
 
 int main()
 {
     int temp = 0;
     int option = 0;
-    printf("KOLEJKA - implementacja w tablicy statycznej\n");
+    cout <<"KOLEJKA - implementacja w tablicy statycznej"<< endl;
     while (1)
     {
         menu();
-        scanf("%d", &option);
-
+        cin >> option;
 
         switch (option)
         {
             case 1:
                 if ( !isQueueFull()){
-                    printf("Podaj wartosc: ");
-                    scanf("%d", &temp);
+                    cout<<"Podaj wartosc: ";
+                    cin >> temp;
                     Add(temp);
                 }
                 else {
-                    printf("operacja niedozwolona KOLEJKA pelny!!!\n\n");
+                    cout << "operacja niedozwolona KOLEJKA jest pelna!!!"<< endl;
                 }
                 break;
             case 2:
                 if (!isQueueEmpty()) {
                     temp = Peek();
-                    printf("Odczytana wartosc: %d", temp);
+                    cout << "Odczytana wartosc:"<< temp << endl;
                 }
                 else {
-                    printf("operacja niedozwolona KOLEJKA pusty!!!\n\n");
+                    cout <<"operacja niedozwolona KOLEJKA jest pusta!!!"<< endl;
                 }
                 break;
             case 3:
                 if (!isQueueEmpty()) {
                     temp = Poll();
-                    printf("Odczytana wartosc: %d", temp);
+                    cout << "Odczytana wartosc: " << temp << endl;
                 }
                 else {
-                    printf("operacja niedozwolona KOLEJKA pusta!!!\n\n");
+                    cout << "operacja niedozwolona KOLEJKA jest pusta!!!"<< endl;
                 }
                 break;
                 break;
             case 4:
                 if (isQueueEmpty())
                 {
-                    printf("KOLEJKA jest pusta.\n");
+                    cout <<"KOLEJKA jest pusta." << endl;
                 } else
                 {
-                    printf("KOLEJKA nie jest pusta.\n");
+                    cout <<"KOLEJKA nie jest pusta." << endl;
                 }
                 break;
             case 5:
                 if (isQueueFull())
                 {
-                    printf("KOLEJKA jest pelna.\n");
+                    cout <<"KOLEJKA jest pelna."<< endl;
                 } else {
-                    printf("KOLEJKA nie jest pelna.\n");
+                    cout <<"KOLEJKA nie jest pelna."<< endl;
                 }
                 break;
             case 6:
                 //zakonczenie programu
                 return 0;
             default:
-                printf("Wybierz wlasciwa opcje.\n\n");
+                cout <<"Wybierz wlasciwa opcje."<< endl;
                 break;
         }
     }
-
-    return 0;
 }
