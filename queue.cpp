@@ -4,6 +4,7 @@ int count = 0;
 int queue_table[QUEUE_SIZE] = { 0 };
 int queue_tail = 0;
 int queue_head = 0;
+int EMPTY_ELEMENT = -1;
 
 int isQueueEmpty(void)
 {
@@ -41,4 +42,18 @@ int Peek(void)
 
     return queue_table[0];
 }
-
+int Poll(void)
+{
+    if (!isQueueEmpty())
+    {
+        int next_in_queue = queue_head;
+        queue_head++;
+        count--;
+        if (queue_head >= QUEUE_SIZE)
+        {
+            queue_head = 0; //
+        }
+        return queue_table[next_in_queue];
+    }
+    return EMPTY_ELEMENT;
+}

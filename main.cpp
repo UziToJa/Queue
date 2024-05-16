@@ -46,6 +46,14 @@ int main()
                 }
                 break;
             case 3:
+                if (!isQueueEmpty()) {
+                    temp = Poll();
+                    printf("Odczytana wartosc: %d", temp);
+                }
+                else {
+                    printf("operacja niedozwolona KOLEJKA pusta!!!\n\n");
+                }
+                break;
                 break;
             case 4:
                 if (isQueueEmpty())
