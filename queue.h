@@ -3,6 +3,6 @@
 
 int isQueueEmpty(void);
 int isQueueFull(void);
-
+void Add(int val);
 
 #endif MYQUEUE_QUEUE_H

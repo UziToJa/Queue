@@ -27,6 +27,14 @@ int main()
         switch (option)
         {
             case 1:
+                if ( !isQueueFull()){
+                    printf("Podaj wartosc: ");
+                    scanf("%d", &temp);
+                    Add(temp);
+                }
+                else {
+                    printf("operacja niedozwolona KOLEJKA pelny!!!\n\n");
+                }
                 break;
             case 2:
                 break;
